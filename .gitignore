@@ -1,0 +1,21 @@
+# Python caches
+__pycache__/
+*.py[cod]
+
+# Streamlit cache and secrets
+.streamlit/
+
+# Test artefacts
+.pytest_cache/
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Local environments
+env/
+.venv/
+venv/
+
+# Reports and generated files
+*.pdf
+
