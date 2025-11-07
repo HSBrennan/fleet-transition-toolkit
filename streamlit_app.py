@@ -3,11 +3,17 @@
 from __future__ import annotations
 
 import json
+import sys
+from pathlib import Path
 from typing import List
 
 import pandas as pd
 import plotly.express as px
 import streamlit as st
+
+ROOT = Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 from app import ai, calculators, constants, data, models, report
 

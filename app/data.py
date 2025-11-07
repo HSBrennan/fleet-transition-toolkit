@@ -36,7 +36,10 @@ def load_dataset(label: str, usecols: Optional[Iterable[str]] = None) -> pd.Data
     if not path.exists():
         raise FileNotFoundError(f"Dataset file not found: {path}")
 
-    df = pd.read_csv(path, usecols=usecols)
+    try:
+        df = pd.read_csv(path, usecols=usecols)
+    except UnicodeDecodeError:
+        df = pd.read_csv(path, usecols=usecols, encoding="latin-1")
     return df
 
 
